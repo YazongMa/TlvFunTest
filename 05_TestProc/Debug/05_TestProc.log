@@ -1,0 +1,13 @@
+﻿  main.cpp
+d:\timproject\05_testproc\05_testproc\main.cpp(46): warning C4267: “参数”: 从“size_t”转换到“const BYTE”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(49): warning C4267: “参数”: 从“size_t”转换到“const BYTE”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(51): warning C4838: 从“int”转换到“char”需要收缩转换
+d:\timproject\05_testproc\05_testproc\main.cpp(51): warning C4309: “初始化”: 截断常量值
+d:\timproject\05_testproc\05_testproc\main.cpp(138): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(139): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(140): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(141): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(142): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+d:\timproject\05_testproc\05_testproc\main.cpp(143): warning C4244: “=”: 从“unsigned __int64”转换到“char”，可能丢失数据
+  05_TestProc.vcxproj -> D:\TimProject\05_TestProc\Debug\05_TestProc.exe
+  05_TestProc.vcxproj -> D:\TimProject\05_TestProc\Debug\05_TestProc.pdb (Partial PDB)
