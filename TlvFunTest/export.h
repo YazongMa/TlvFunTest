@@ -1,10 +1,4 @@
 
-/*
- * File Name: export.h
- * Author: Alan.Ren
- * 
- * Create Date: 2019.3.29
- */
 
 #ifndef _H_H_EXPORTS_H_H_
 #define _H_H_EXPORTS_H_H_
