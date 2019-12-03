@@ -40,10 +40,6 @@
 #define PCBYTE  const unsigned char *
 #define PBYTE   unsigned char *
 
-typedef unsigned int    UINT_PTR, *PUINT_PTR;
-typedef long            LONG_PTR, *PLONG_PTR;
-typedef UINT_PTR        WPARAM;
-typedef LONG_PTR        LPARAM;
 
 #ifndef TRUE
 #define TRUE	1
