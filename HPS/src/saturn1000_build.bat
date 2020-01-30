@@ -1,5 +1,5 @@
 echo off
-set BASE_PATH=D:/Workspace/HP-API/trunk/HPS
+set BASE_PATH=D:/TimProject/05_TestProc/HPS
 set NDK_PATH=C:/Users/Administrator/AppData/Local/Android/Sdk/ndk-bundle
 set CMAKE_PATH=C:/Users/Administrator/AppData/Local/Android/Sdk/cmake/3.10.2.4988404/bin
 
