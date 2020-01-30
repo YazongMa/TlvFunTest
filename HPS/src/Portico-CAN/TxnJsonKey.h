@@ -90,7 +90,8 @@
 #define Act_InteracAccountType  "ActInteracAccountType"
 #define Act_LanguageSelect      "ActSelectLanguage"
 #define Act_LanguageSwitch      "ActSwitchLanguage"
+#define Act_Interac_Receipt_Warning      "ActInteracReceiptWarning"
 
-#define TestAp_Version          "1.1.7"
+#define TestAp_Version          "1.1.8"
 
 #endif 

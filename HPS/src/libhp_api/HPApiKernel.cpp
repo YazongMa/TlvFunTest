@@ -70,7 +70,8 @@ static const struct
     { TXN_STATE_INTERAC_POS_SEQNBR, kTxnInteracPosSeqNbr },
     { TXN_STATE_INTERAC_ACCOUNT_TYPE, kTxnInteracAccountType },
     { TXN_STATE_SELECT_LANGUAGE, kSelectLanguage },
-    { TXN_STATE_SWITCH_LANGUAGE, kSwitchLanguage }
+    { TXN_STATE_SWITCH_LANGUAGE, kSwitchLanguage },
+    { TXN_STATE_INTERAC_RECEIPT_WARNINIG, kInteracReceiptWarning }
 };
 
 //
@@ -1713,6 +1714,7 @@ void CHPApiKernel::RequsetUserAction(IN const unsigned int &nActionType,
     case TXN_STATE_INTERAC_ACCOUNT_TYPE:
     case TXN_STATE_SELECT_LANGUAGE:
     case TXN_STATE_SWITCH_LANGUAGE:
+    case TXN_STATE_INTERAC_RECEIPT_WARNINIG:
         {
             NormalActionRequest(nActionType, pData, nDataSize);
             SetCurApiMode(kWaitingUserInputCmd);
@@ -1750,6 +1752,7 @@ void CHPApiKernel::WaitUserResponse(IN const unsigned int &nActionType,
     case TXN_STATE_INTERAC_ACCOUNT_TYPE:
     case TXN_STATE_SELECT_LANGUAGE:
     case TXN_STATE_SWITCH_LANGUAGE:
+    case TXN_STATE_INTERAC_RECEIPT_WARNINIG:
         {
             NormalActionResponse(nActionType, pBuffer, nBufferSize);
         }

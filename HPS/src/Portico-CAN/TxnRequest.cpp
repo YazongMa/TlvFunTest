@@ -1145,3 +1145,46 @@ CByteStream CTxnRequest::GenLanguageSwitchJsonData(const BYTE *pbyLanguage)
 
     return cJsonData;
 }
+
+
+/*
+ * Public.
+ */
+CByteStream CTxnRequest::GenInteracReceiptWarningJsonData(const BOOL &bConfirm)
+{
+    CByteStream cJsonData;
+    cJSON *pcJsonRoot = NULL;
+    const char *pszJsonData = NULL;
+
+    do
+    {
+        pcJsonRoot = cJSON_CreateObject();
+        if (NULL == pcJsonRoot)
+            break;
+        
+        cJSON_AddStringToObject(pcJsonRoot, Act_Type, Act_Interac_Receipt_Warning);
+        if (bConfirm)
+        {
+            cJSON_AddStringToObject(pcJsonRoot, Act_Value, "TRUE");
+        }
+        else
+        {
+            cJSON_AddStringToObject(pcJsonRoot, Act_Value, "FALSE");
+        }
+        
+
+        pszJsonData = cJSON_Print(pcJsonRoot);
+        if (NULL != pszJsonData)
+        {
+            cJsonData << pszJsonData;
+
+            cJSON_free((void *) pszJsonData);
+            pszJsonData = NULL;
+        }
+
+        cJSON_Delete(pcJsonRoot);
+        pcJsonRoot = NULL;
+    } while (0);
+
+    return cJsonData;
+}

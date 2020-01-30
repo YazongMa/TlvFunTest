@@ -36,6 +36,7 @@
 #define JV_Act_InteracAccountType           "ActInteracAccountType"
 #define JV_Act_Select_Language              "ActSelectLanguage"
 #define JV_Act_Switch_Language              "ActSwitchLanguage"
+#define JV_Act_Interac_Receipt_Warning      "ActInteracReceiptWarning"
 
 
 #endif /* __HEARTLAND_PAYMENT_KERNEL_JSONKEY_H__ */

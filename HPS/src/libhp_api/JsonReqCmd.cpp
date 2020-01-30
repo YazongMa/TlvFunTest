@@ -58,6 +58,7 @@ static const struct
     { JV_Act_InteracAccountType, TXN_STATE_INTERAC_ACCOUNT_TYPE },
     { JV_Act_Select_Language, TXN_STATE_SELECT_LANGUAGE },
     { JV_Act_Switch_Language, TXN_STATE_SWITCH_LANGUAGE },
+    { JV_Act_Interac_Receipt_Warning, TXN_STATE_INTERAC_RECEIPT_WARNINIG },
 };
 
 //

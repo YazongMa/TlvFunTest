@@ -196,7 +196,10 @@ typedef enum
     TXN_STATE_SELECT_LANGUAGE = 130,
             
     /*131, switch language*/
-    TXN_STATE_SWITCH_LANGUAGE = 131,        
+    TXN_STATE_SWITCH_LANGUAGE = 131,      
+            
+    /*132, interac receipt warning*/
+    TXN_STATE_INTERAC_RECEIPT_WARNINIG = 132,
 
     TXN_STATE_COMPLETION = 1000
 }HEARTLAND_TRANS_STATE;

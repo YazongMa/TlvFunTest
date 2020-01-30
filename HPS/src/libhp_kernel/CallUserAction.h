@@ -54,6 +54,8 @@ public:
     virtual void ReqUserInputPosSeqNbr(OUT BYTE* pbyPosSeqNbr);
 
     virtual void ReqUserInputAccountType(OUT BYTE* pbyAccountType);
+
+    virtual BOOL ReqUserInteracReceiptWarning(void);
     
     virtual void LanguageProcessing(void);
     

@@ -65,6 +65,7 @@ typedef enum
     kSelectLanguage,           // 0x28, Ui of User Action: select language
 	
     kSwitchLanguage,           // 0x29, Ui of User Action: switch language
+    kInteracReceiptWarning,    // 0x2A, Ui of User Action: interac receipt warning
 
     kInTxnUi
 } kUiIndex;

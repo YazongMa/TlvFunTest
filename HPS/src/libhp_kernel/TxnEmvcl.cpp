@@ -150,6 +150,17 @@ int CTxnEmvcl::PerformTxn(void)
             return -1;
         }
 
+        if (IsInteracAID(d_CTLS_ARQC))
+        {
+            nRet = m_cCallUserAction.ReqUserInteracReceiptWarning()
+            if(nRet != d_EMVAPLIB_OK)
+            {
+                TraceMsg("PerformTxn User terminated the transaction since no receipt provided");
+                SetState(TXN_STATE_IDLE);
+                return nRet;
+            }
+        }
+        
         //5. analysising card datas
         ulRet = AnalysisTransactionEx();
         if (ulRet != 0)

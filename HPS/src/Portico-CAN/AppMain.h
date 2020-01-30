@@ -58,6 +58,7 @@
 #define Ui_Txn_Connect_NotAvailable  (0x27)  // Add
 #define Ui_Select_Language           (0x28)  // Add
 #define Ui_Switch_Language           (0x29)  // Add
+#define Ui_Interac_Receipt_Warning   (0x2A)  // Add
 
 // Error UI page index.
 #define Ui_Unkown                    (-1)

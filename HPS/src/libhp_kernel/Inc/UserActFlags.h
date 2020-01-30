@@ -11,12 +11,13 @@
 
 enum
 {
-    EnableActTotalAmt         = 0x00000001,
-    EnableActCallBank         = 0x00000002,
-    EnableActExpFile          = 0x00000004,
-    EnableConfirmCommWithHost = 0x00000010,
-    EnablePromptLastPINInput  = 0x00000020,
-    EnablePrintSignautre      = 0x00000040
+    EnableActTotalAmt           = 0x00000001,
+    EnableActCallBank           = 0x00000002,
+    EnableActExpFile            = 0x00000004,
+    EnableConfirmCommWithHost   = 0x00000010,
+    EnablePromptLastPINInput    = 0x00000020,
+    EnablePrintSignautre        = 0x00000040,
+    EnableInteracReceiptWarning = 0x00000080,
 };
 
 #endif

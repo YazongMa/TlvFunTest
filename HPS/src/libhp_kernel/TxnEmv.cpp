@@ -250,21 +250,34 @@ int CTxnEmv::PerformTxn(void)
             SetState(TXN_STATE_PLEASE_SWIPE_CARD);
             bFallbackFlag_ = TRUE;
         }
-        TraceMsg("PerformEMVTxn SelectTxnApp, nRet:0x%04X",  nRet);
+        TraceMsg("PerformTxn SelectTxnApp, nRet:0x%04X",  nRet);
         return nRet;
     }
     else if (0xEA01 == nRet)
     {
-        TraceMsg("PerformEMVTxn SelectTxnApp, nRet:0x%04X",  nRet);
+        TraceMsg("PerformTxn SelectTxnApp, nRet:0x%04X",  nRet);
         SetState(TXN_STATE_IDLE);
     }
     else if (d_EMVAPLIB_OK != nRet)
     {
-        TraceMsg("PerformEMVTxn SelectTxnApp, nRet:0x%04X",  nRet);
+        TraceMsg("PerformTxn SelectTxnApp, nRet:0x%04X",  nRet);
         SetState(TXN_STATE_DECLINED);
         return nRet;
     }
     
+
+    if (IsInteracAID(d_ICC_ARQC))
+    {
+        nRet = m_cCallUserAction.ReqUserInteracReceiptWarning()
+        if(nRet != d_EMVAPLIB_OK)
+        {
+            TraceMsg("PerformTxn User terminated the transaction since no receipt provided");
+            SetState(TXN_STATE_IDLE);
+            return nRet;
+        }
+    }
+
+
     // Get Tag57
     BYTE byTagValue[128] = { 0 };
     USHORT usTagLen = sizeof(byTagValue);
@@ -312,7 +325,7 @@ int CTxnEmv::PerformTxn(void)
     }
     else if (nRet != 0)
     {
-        TraceMsg("PerformEMVTxn Failed:0x%04X",  nRet);
+        TraceMsg("PerformTxn Failed:0x%04X",  nRet);
         SetState(TXN_STATE_DECLINED);
         return nRet;
     }

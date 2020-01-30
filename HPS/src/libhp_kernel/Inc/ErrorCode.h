@@ -31,5 +31,6 @@
 #define ERROR_CODE_INTERAC_POS_SEQUENCE_NBR         ( 0xEA05 )
 #define ERROR_CODE_INTERAC_ACCOUNT_TYPE             ( 0xEA06 )
 //#define ERROR_CODE_SELECT_LANG_FAIL                 ( 0XEA07 )
+#define ERROR_CODE_INTERAC_RECEIPT_WARNING          ( 0xEA08 )
 
 #endif

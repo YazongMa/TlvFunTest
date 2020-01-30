@@ -49,6 +49,7 @@ public:
     CByteStream GenInteracAccountType(const BYTE *pbyAccountType);
     CByteStream GenLanguageSelectJsonData(const BYTE *pbyLanguage);
     CByteStream GenLanguageSwitchJsonData(const BYTE *pbyLanguage);
+    CByteStream GenInteracReceiptWarningJsonData(const BOOL &bConfirm);
 
   private:
     CByteStream GenTxnInitJsonConfig(BOOL bUseGprs = FALSE,

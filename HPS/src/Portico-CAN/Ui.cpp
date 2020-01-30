@@ -75,6 +75,7 @@ static const struct
     { Ui_Manual_Sel_Txn_Type, "./Bmp/English/SelOpTxnType.bmp" },
     { Ui_Select_Aid, "./Bmp/English/UserSelAid.bmp" },
     { Ui_Confirm_Select_Aid, "./Bmp/English/UserConfirmAid_2.bmp" },
+    { Ui_Interac_Receipt_Warning, "./Bmp/English/InteracReceiptWarning.bmp" },
     { Ui_Get_Total_Amt, "./Bmp/English/TotalAmt.bmp" },
     { Ui_Chk_Exp_File, "./Bmp/English/ChkExpFile.bmp" },
     { Ui_Call_Your_Bank, "./Bmp/English/CallYourBank.bmp" },
@@ -125,6 +126,7 @@ static const struct
     { Ui_Manual_Sel_Txn_Type, "./Bmp/French/SelOpTxnType.bmp" },
     { Ui_Select_Aid, "./Bmp/French/UserSelAid.bmp" },
     { Ui_Confirm_Select_Aid, "./Bmp/French/UserConfirmAid_2.bmp" },
+    { Ui_Interac_Receipt_Warning, "./Bmp/French/InteracReceiptWarning.bmp" },
     { Ui_Get_Total_Amt, "./Bmp/French/TotalAmt.bmp" },
     { Ui_Chk_Exp_File, "./Bmp/French/ChkExpFile.bmp" },
     { Ui_Call_Your_Bank, "./Bmp/French/CallYourBank.bmp" },
@@ -696,7 +698,8 @@ void* CUi::uiModuleThread(void *pVoid)
                 nCurUiIndex == Ui_Confirm_Select_Aid ||
                 nCurUiIndex == Ui_Select_Aid ||
                 nCurUiIndex == Ui_Txn_Interac_Account_Type ||
-                nCurUiIndex == Ui_Select_Language)
+                nCurUiIndex == Ui_Select_Language ||
+                nCurUiIndex == Ui_Interac_Receipt_Warning)
             {
                 TraceMsg("Enable Touch");
                 EnableTouch(TRUE);

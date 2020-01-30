@@ -671,3 +671,49 @@ void CCallUserAction::ReqUserInputAccountType(OUT BYTE* pbyAccountType)
         cJSON_free((void *)pszJsonStr);
     }
 }
+
+
+WORD CCallUserAction::ReqUserInteracReceiptWarning(void)
+{
+    TraceMsg("Info: %s Entry", __FUNCTION__);
+    WORD wErr = d_EMVAPLIB_OK;
+    if (IsEnableUserAction(EnableInteracReceiptWarning))
+    {
+        TraceMsg("Info: Enable InteracReceiptWarning");
+
+        const char *pszJsonStr = NULL;
+        cJSON *pJsonRoot = NULL;
+        char szRspBuf[256] = {0};
+
+        do
+        {
+            pJsonRoot = cJSON_CreateObject();
+            if (NULL != pJsonRoot)
+                break;
+
+            cJSON_AddStringToObject(pJsonRoot, JK_Act_Type, JV_Act_Interac_Receipt_Warning);
+
+            pszJsonStr = cJSON_Print(pJsonRoot);
+            if (NULL == pszJsonStr)
+                break;
+
+            ReqUserAction(TXN_STATE_INTERAC_RECEIPT_WARNINIG, pszJsonStr, strlen(pszJsonStr));
+            WaitUserFinishAction(TXN_STATE_INTERAC_RECEIPT_WARNINIG, szRspBuf, sizeof(szRspBuf));
+
+            if (0 != strcasecmp((char *)szRspBuf, "true"))
+            {
+                wErr = ERROR_CODE_INTERAC_RECEIPT_WARNING;
+                TraceMsg("Error: Interac Receipt Warning WaitUserFinishAction:%s", szRspBuf);
+                break;
+            }
+        } while (0);
+
+        if (NULL != pszJsonStr)
+            cJSON_free((void *)pszJsonStr);
+        if (NULL != pJsonRoot)
+            cJSON_Delete(pJsonRoot);
+    }
+
+    TraceMsg("Info: %s Exit wErr:0x%04X", __FUNCTION__, wErr);
+    return wErr;
+}

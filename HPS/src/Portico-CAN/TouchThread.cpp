@@ -298,6 +298,25 @@ static void processTouchEvent_(CUi *pcUi, CTxnRequest *pcTxnReq, const long lX1,
             pcUi->SwitchUi(Ui_After_Call_PostRequest);
         }
     }
+    else if (Ui_Interac_Receipt_Warning == pcUi->GetCurUiIndex())
+    {
+        CByteStream cData;
+        if (PtInRect_(lX1, lY1, btnCancel_) && PtInRect_(lX2, lY2, btnCancel_))
+        {
+            cData = pcTxnReq->GenInteracReceiptWarningJsonData(FALSE);
+        }
+        else if (PtInRect_(lX1, lY1, btnEnter_) && PtInRect_(lX2, lY2, btnEnter_))
+        {
+            cData = pcTxnReq->GenInteracReceiptWarningJsonData(TRUE);
+        }
+
+        TraceMsg("Json Data: \n%s", cData.IsEmpty()?"empty":(char *)cData.GetBuffer());
+        if (!cData.IsEmpty())
+        {
+            PostRequest((char *)cData.PushZero(), cData.GetLength());
+            pcUi->SwitchUi(Ui_After_Call_PostRequest);
+        }
+    }
     else if (Ui_Select_Aid == pcUi->GetCurUiIndex())
     {
         int nAppNum;
@@ -442,7 +461,8 @@ static void NormalUiMode_(CUi *pcUi, CTxnRequest *pcTxnReq)
             nCurUiIndex == Ui_Confirm_Select_Aid ||
             nCurUiIndex == Ui_Select_Aid ||
             nCurUiIndex == Ui_Txn_Interac_Account_Type || 
-            nCurUiIndex == Ui_Select_Language)
+            nCurUiIndex == Ui_Select_Language ||
+            nCurUiIndex == Ui_Interac_Receipt_Warning)
         {
             BOOL bRet = cTouch_.TouchGetPosition(lX1, lY1, lX2, lY2);
             if (bRet)
