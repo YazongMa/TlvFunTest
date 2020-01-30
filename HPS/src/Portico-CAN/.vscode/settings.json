@@ -1,0 +1,28 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "utility": "cpp",
+        "xlocale": "cpp",
+        "typeinfo": "cpp",
+        "sqlite3.h": "c",
+        "sqlite3.h\u0000ite3.h": "c"
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "svn.delete.ignoredRulesForDeletedFiles": [
+        "dist\\upt1000\\App\\libcurl_kernel.so",
+        "dist\\upt1000\\App\\libmisc.so",
+        "dist\\upt1000\\App\\libsoap_control.so",
+        "dist\\upt1000\\App\\libsoap_kernel.so",
+        "dist\\upt1000\\App\\libtxn.so",
+        "dist\\upt1000\\App\\libvirtualkbd.so",
+        "dist\\upt1000\\App\\TestAP",
+        "dist\\upt1000\\App\\libcjson.so",
+        "dist\\upt1000\\App\\Res.zip",
+        "dist\\upt1000\\output",
+        "dist\\upt1000\\App\\libhp.so",
+        "dist\\upt1000\\output\\App.CAP",
+        "dist\\upt1000\\output\\App.mci"
+    ]
+}

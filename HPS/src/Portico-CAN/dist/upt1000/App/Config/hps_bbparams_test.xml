@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE voltage_settings [
+<!ELEMENT voltage_settings (identity_name, public_parameters)>
+]>
+<voltage_settings>
+  <identity_name>
+    posp2pe@secureexchange.net
+  </identity_name>
+  <public_parameters>
+    AwwAWH5ddBIgAYAmQVd40HtR9gaHG9tFEYQfELwfTQKafmEW2RXwKe0gxKBErd5bPiSZBXECinf1XzSoOVXZ/gnokWdTf5ajHEnVj4pXKVAEUAPsipQTb1v/uT89FuyCHe9dtosmn3TF/65RanvBZvHnGGMMwrKnqs79suNq8XAOoLk7OVPWZhPKKwAJaXMn6AAt3aAPMooZeTQCnIN8q+tOZX0cl3mIGo5WFnC4ovNg9I3dsx1pMbQgWQWhVXoJuEJhIDFPAO8haC7JAICww9ZvLd705yRb9UkA6nQDNEBTT8HYFGtwED8S5d0bef8wQ+WKkXs8ViJqbwHVJ3enVXM4oUTW4+eUEpmrGuyF5DFR2aU/1yrjKJHwie9HbRyWXlqWLxNL95PIs4ldAMdGtP2IwRBLSICcWtcdYUoxJ472b3hlYvNrV9JlJ4IEz1wnANzh6xy/NPpx66E/y7pMmJQ0NEq1lSb7CCyz3a81saaI44mAoTYhMWjM1TqaZ9EBhyLOMWBNNKQ6YxcectHmkFEjzUpxFy0rvojb9QSKkWqSvITYF1VzOWUwCWDMPzFge8NkUvwHxRgl3oajrvdoRhmEq2ewagFyoMoiXrMo/Wjl4f9p6IXE3CDbo3IIdLqlk3j43Q+pBAG1eA8icH363whvQ2RICuCVM+lO9vntDUO6/5A/m93DhUNT03NlY3VyZWV4Y2hhbmdlLm5ldA==
+  </public_parameters>
+</voltage_settings>
