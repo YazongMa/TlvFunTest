@@ -149,6 +149,7 @@ int CTxnSAF::DoPack(IN char* pcJsonString, OUT CByteStream *pcPackData)
     memset(m_szTxnSafSequenceID, 0x00, sizeof(m_szTxnSafSequenceID));
 
     cJSON *pcSubItem = NULL;
+    cJSON *pcTxnType = NULL;
     cJSON *pcJsonRoot = NULL;
     int nTxnReqDataLength = 0;
 
@@ -173,6 +174,48 @@ int CTxnSAF::DoPack(IN char* pcJsonString, OUT CByteStream *pcPackData)
             TraceMsg("WARNING: %s is empty", JK_Txn_SafSequenceID);
         }
     }
+
+    //txnType
+    pcTxnType = cJSON_GetObjectItem(pcJsonRoot, JK_Txn_Type);
+    if (NULL != pcTxnType && cJSON_String == pcTxnType->type && 0 == strcmp(pcTxnType->valuestring, JV_AuthComplete))
+    {
+        ST_HSOAP_REQUEST cHsoapRequest = { 0 };
+        cHsoapRequest.nTransactionType = tt_CREDIT_ADD_TO_BATCH;
+        cHsoapRequest.nTransactionInterface = ti_CTLS;
+
+        //txnGatewayTxnID
+        cJSON* pcGatewayId = cJSON_GetObjectItem(pcJsonRoot, JK_Txn_Gateway_Id);
+        if (NULL != pcGatewayId && cJSON_String == pcGatewayId->type && 0 != strlen(pcGatewayId->valuestring))
+        {
+            strcpy(cHsoapRequest.szGatewayTxnId, pcGatewayId->valuestring);
+        }
+
+        //txnAmt
+        cJSON* pcAuthAmt = cJSON_GetObjectItem(pcJsonRoot, JK_Txn_Amount);
+        if (NULL != pcAuthAmt && cJSON_String == pcAuthAmt->type && 0 != strlen(pcAuthAmt->valuestring))
+        {
+            strcpy(cHsoapRequest.szAmt, pcAuthAmt->valuestring);
+        }
+
+        int  nSoapLen = 2048;
+        char szRequestSoap[2048] = { 0 };
+        int nRet = m_pcSoapKernel->HeartlandSOAP_Pack(&cHsoapRequest, &nSoapLen, szRequestSoap);
+        if (nRet)
+        {
+            TraceMsg("HeartlandSOAP_Pack Return: 0x%X", nRet);
+            cJSON_Delete(pcJsonRoot);
+            return nRet;
+        }
+
+        pcPackData->Write(szRequestSoap, nSoapLen);
+        pcPackData->PushZero();
+
+        cJSON_Delete(pcJsonRoot);
+        pcJsonRoot = NULL;
+        TraceMsg("%s Exit", __FUNCTION__);
+        return 0;
+    }
+
 
     //txnRequestData
     pcSubItem = cJSON_GetObjectItem(pcJsonRoot, JK_Txn_ReqData);
