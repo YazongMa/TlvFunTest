@@ -1,5 +1,0 @@
-{
-    global:
-        cJSON_*;
-    local: *;
-};

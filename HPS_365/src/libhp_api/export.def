@@ -1,7 +1,0 @@
-{
-    global:
-            GetResponse;
-            PostRequest;
-            GetVersion;
-    local: *;
-};
