@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<configurationDescriptor version="01">
+    <Config index="01" active="true">
+        <CAPKConfig>
+            <Group RID="A000000277">
+                <Item index="40">
+                    <modules>F802C308544873AD2225A81943732A4B7CFFA4E3157D17CD5A7723F858F0B11E636D2930FA933778F27C7C49127E0CCA317021CFE8E0F773785EB3FF07587E98CE8ED4FE9E1CA1859F41A9CF2572D8A093C5465F5A29612A45B1700F4DA13814C3D4DF075EAADE8DB4BE4D7B3AE0256F7A0C12E34BD416CAC4F9250C38B7E13B</modules>
+                    <exponent>010001</exponent>
+                    <expirydata/>
+                    <hash>2015497BE4B86F104BBF337691825EED64E101CA</hash>
+                </Item>
+                <Item index="09">
+                    <modules>F802C308544873AD2225A81943732A4B7CFFA4E3157D17CD5A7723F858F0B11E636D2930FA933778F27C7C49127E0CCA317021CFE8E0F773785EB3FF07587E98CE8ED4FE9E1CA1859F41A9CF2572D8A093C5465F5A29612A45B1700F4DA13814C3D4DF075EAADE8DB4BE4D7B3AE0256F7A0C12E34BD416CAC4F9250C38B7E13B</modules>
+                    <exponent>010001</exponent>
+                    <expirydata/>
+                    <hash>A2974D6B8F302A923740E2BC6217075202037B8B</hash>
+                </Item>
+            </Group>
+			<Group RID="A000000003">
+                <Item index="07">
+                    <modules>A89F25A56FA6DA258C8CA8B40427D927B4A1EB4D7EA326BBB12F97DED70AE5E4480FC9C5E8A972177110A1CC318D06D2F8F5C4844AC5FA79A4DC470BB11ED635699C17081B90F1B984F12E92C1C529276D8AF8EC7F28492097D8CD5BECEA16FE4088F6CFAB4A1B42328A1B996F9278B0B7E3311CA5EF856C2F888474B83612A82E4E00D0CD4069A6783140433D50725F</modules>
+                    <exponent>03</exponent>
+                    <expirydata />
+                    <hash>B4BC56CC4E88324932CBC643D6898F6FE593B172</hash>
+                </Item>
+                <Item index="08">
+                    <modules>D9FD6ED75D51D0E30664BD157023EAA1FFA871E4DA65672B863D255E81E137A51DE4F72BCC9E44ACE12127F87E263D3AF9DD9CF35CA4A7B01E907000BA85D24954C2FCA3074825DDD4C0C8F186CB020F683E02F2DEAD3969133F06F7845166ACEB57CA0FC2603445469811D293BFEFBAFAB57631B3DD91E796BF850A25012F1AE38F05AA5C4D6D03B1DC2E568612785938BBC9B3CD3A910C1DA55A5A9218ACE0F7A21287752682F15832A678D6E1ED0B</modules>
+                    <exponent>03</exponent>
+                    <expirydata />
+                    <hash>20D213126955DE205ADC2FD2822BD22DE21CF9A8</hash>
+                </Item>
+                <Item index="09">
+                    <modules>9D912248DE0A4E39C1A7DDE3F6D2588992C1A4095AFBD1824D1BA74847F2BC4926D2EFD904B4B54954CD189A54C5D1179654F8F9B0D2AB5F0357EB642FEDA95D3912C6576945FAB897E7062CAA44A4AA06B8FE6E3DBA18AF6AE3738E30429EE9BE03427C9D64F695FA8CAB4BFE376853EA34AD1D76BFCAD15908C077FFE6DC5521ECEF5D278A96E26F57359FFAEDA19434B937F1AD999DC5C41EB11935B44C18100E857F431A4A5A6BB65114F174C2D7B59FDF237D6BB1DD0916E644D709DED56481477C75D95CDD68254615F7740EC07F330AC5D67BCD75BF23D28A140826C026DBDE971A37CD3EF9B8DF644AC385010501EFC6509D7A41</modules>
+                    <exponent>03</exponent>
+                    <expirydata />
+                    <hash>1FF80A40173F52D7D27E0F26A146A1C8CCB29046</hash>
+                </Item>
+                <Item index="95">
+                    <modules>BE9E1FA5E9A803852999C4AB432DB28600DCD9DAB76DFAAA47355A0FE37B1508AC6BF38860D3C6C2E5B12A3CAAF2A7005A7241EBAA7771112C74CF9A0634652FBCA0E5980C54A64761EA101A114E0F0B5572ADD57D010B7C9C887E104CA4EE1272DA66D997B9A90B5A6D624AB6C57E73C8F919000EB5F684898EF8C3DBEFB330C62660BED88EA78E909AFF05F6DA627B</modules>
+                    <exponent>03</exponent>
+                    <expirydata />
+                    <hash>EE1511CEC71020A9B90443B37B1D5F6E703030F6</hash>
+                </Item>
+                <Item index="92">
+                    <modules>996AF56F569187D09293C14810450ED8EE3357397B18A2458EFAA92DA3B6DF6514EC060195318FD43BE9B8F0CC669E3F844057CBDDF8BDA191BB64473BC8DC9A730DB8F6B4EDE3924186FFD9B8C7735789C23A36BA0B8AF65372EB57EA5D89E7D14E9C7B6B557460F10885DA16AC923F15AF3758F0F03EBD3C5C2C949CBA306DB44E6A2C076C5F67E281D7EF56785DC4D75945E491F01918800A9E2DC66F60080566CE0DAF8D17EAD46AD8E30A247C9F</modules>
+                    <exponent>03</exponent>
+                    <expirydata />
+                    <hash>429C954A3859CEF91295F663C963E582ED6EB253</hash>
+                </Item>
+                <Item index="94">
+                    <modules>ACD2B12302EE644F3F835ABD1FC7A6F62CCE48FFEC622AA8EF062BEF6FB8BA8BC68BBF6AB5870EED579BC3973E121303D34841A796D6DCBC41DBF9E52C4609795C0CCF7EE86FA1D5CB041071ED2C51D2202F63F1156C58A92D38BC60BDF424E1776E2BC9648078A03B36FB554375FC53D57C73F5160EA59F3AFC5398EC7B67758D65C9BFF7828B6B82D4BE124A416AB7301914311EA462C19F771F31B3B57336000DFF732D3B83DE07052D730354D297BEC72871DCCF0E193F171ABA27EE464C6A97690943D59BDABB2A27EB71CEEBDAFA1176046478FD62FEC452D5CA393296530AA3F41927ADFE434A2DF2AE3054F8840657A26E0FC617</modules>
+                    <exponent>03</exponent>
+                    <expirydata />
+                    <hash>C4A3C43CCF87327D136B804160E47D43B60E6E0F</hash>
+                </Item>
+            </Group>
+        </CAPKConfig>
+        <AppList>
+            <Item index="01">
+                <Name>Interac Association</Name>
+                <AID>A0000002771010</AID>
+                <ASI>00</ASI>
+            </Item>
+			<!-- <Item index="02">
+                <Name>VISA Credit Debit</Name>
+                <AID>A0000000031010</AID>
+                <ASI>00</ASI>
+            </Item> -->
+        </AppList>
+        <TerminalConfig>
+            <Item name="TERMINAL CAPABILITIES" tag="9F33" attribute="hex">E098C8</Item>
+            <Item name="ADDITIONAL TERMINAL CAPABILITIES" tag="9F40" attribute="hex">F000F00001</Item>
+            <Item name="INTERFACE DEVICE (IFD) SERIAL NUMBER" tag="9F1E" attribute="asc">12345678</Item>
+            <Item name="TRANSACTION CURRENCY CODE" tag="5F2A" attribute="hex">0124</Item>
+            <Item name="TERMINAL COUNTRY CODE" tag="9F1A" attribute="hex">0124</Item>
+            <Item name="Default TDOL" tag="DFC0" attribute="hex">9F02065F2A029A039C0195059F3704</Item>
+            <Item name="Default DDOL" tag="DFC1" attribute="hex">9F3704</Item>
+            <Item name="App Version" tag="9F09" attribute="hex">0084</Item>
+            <Item name="Termian Floor Limit" tag="9F1B" attribute="hex">00000000</Item>
+            <Item name="Threshold Value" tag="DFC4" attribute="hex">00000005</Item>
+            <Item name="Target Percent" tag="DFC2" attribute="hex">00</Item>
+            <Item name="Max Target Percent" tag="DFC3" attribute="hex">00</Item>
+            <Item name="TAC Denial" tag="DFC6" attribute="hex">0000000000</Item>
+            <Item name="TAC Online" tag="DFC7" attribute="hex">0000000000</Item>
+            <Item name="TAC Default" tag="DFC8" attribute="hex">0000000000</Item>
+            <Item name="Terminal type" tag="9F35" attribute="hex">25</Item>
+        </TerminalConfig>
+        <AppConfig>
+            <Group name="Interac Association" AID="A0000002771010" ASI="00">
+                <Item name="App Version" tag="9F09" attribute="hex">0001</Item>
+                <Item name="TAC Denial" tag="DFC6" attribute="hex">0010000000</Item>
+                <Item name="TAC Online" tag="DFC7" attribute="hex">FC68FCF800</Item>
+                <Item name="TAC Default" tag="DFC8" attribute="hex">FC68FCF800</Item>
+            </Group>
+			<Group name="VISA Credit Debit" AID="A0000000031010" ASI="00">
+                <Item name="App Version" tag="9F09" attribute="hex">008C</Item>
+                <Item name="Termian Floor Limit" tag="9F1B" attribute="hex">00000000</Item>
+                <Item name="Threshold Value" tag="DFC4" attribute="hex">00000000</Item>
+                <Item name="Target Percent" tag="DFC2" attribute="hex">00</Item>
+                <Item name="Max Target Percent" tag="DFC3" attribute="hex">00</Item>
+                <Item name="TAC Denial" tag="DFC6" attribute="hex">0010000000</Item>
+                <Item name="TAC Online" tag="DFC7" attribute="hex">DC4004F800</Item>
+                <Item name="TAC Default" tag="DFC8" attribute="hex">DC4000A800</Item>
+            </Group>
+        </AppConfig>
+    </Config>
+</configurationDescriptor>
