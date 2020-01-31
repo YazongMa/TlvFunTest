@@ -672,7 +672,7 @@ void CCallUserAction::ReqUserInputAccountType(OUT BYTE* pbyAccountType)
     }
 }
 
-
+#if 0
 WORD CCallUserAction::ReqUserInteracReceiptWarning(void)
 {
     TraceMsg("Info: %s Entry", __FUNCTION__);
@@ -687,25 +687,30 @@ WORD CCallUserAction::ReqUserInteracReceiptWarning(void)
 
         do
         {
+            TraceMsg("Info: - 1");
             pJsonRoot = cJSON_CreateObject();
             if (NULL != pJsonRoot)
                 break;
 
+            TraceMsg("Info: - 2");
             cJSON_AddStringToObject(pJsonRoot, JK_Act_Type, JV_Act_Interac_Receipt_Warning);
 
             pszJsonStr = cJSON_Print(pJsonRoot);
             if (NULL == pszJsonStr)
                 break;
 
+            TraceMsg("Info: - 3");
             ReqUserAction(TXN_STATE_INTERAC_RECEIPT_WARNINIG, pszJsonStr, strlen(pszJsonStr));
             WaitUserFinishAction(TXN_STATE_INTERAC_RECEIPT_WARNINIG, szRspBuf, sizeof(szRspBuf));
 
+            TraceMsg("Info: - 4");
             if (0 != strcasecmp((char *)szRspBuf, "true"))
             {
                 wErr = ERROR_CODE_INTERAC_RECEIPT_WARNING;
                 TraceMsg("Error: Interac Receipt Warning WaitUserFinishAction:%s", szRspBuf);
                 break;
             }
+            TraceMsg("Info: - 5");
         } while (0);
 
         if (NULL != pszJsonStr)
@@ -717,3 +722,37 @@ WORD CCallUserAction::ReqUserInteracReceiptWarning(void)
     TraceMsg("Info: %s Exit wErr:0x%04X", __FUNCTION__, wErr);
     return wErr;
 }
+#else
+WORD CCallUserAction::ReqUserInteracReceiptWarning(void)
+{
+    TraceMsg("Info: %s Entry", __FUNCTION__);
+    WORD wErr = d_EMVAPLIB_OK;
+    if (IsEnableUserAction(EnableInteracReceiptWarning))
+    {
+        TraceMsg("Info: Enable InteracReceiptWarning");
+
+        cJSON *pJsonRoot = NULL;
+        char szRspBuf[256] = {0};
+
+        do
+        {
+            TraceMsg("Info: - 1");
+            ReqUserAction(TXN_STATE_INTERAC_RECEIPT_WARNINIG, "{ }", 3);
+            WaitUserFinishAction(TXN_STATE_INTERAC_RECEIPT_WARNINIG, szRspBuf, sizeof(szRspBuf));
+
+            TraceMsg("Info: - 2");
+            if (0 != strcasecmp((char *)szRspBuf, "true"))
+            {
+                wErr = ERROR_CODE_INTERAC_RECEIPT_WARNING;
+                TraceMsg("Error: Interac Receipt Warning WaitUserFinishAction:%s", szRspBuf);
+                break;
+            }
+            TraceMsg("Info: - 3");
+        } while (0);
+    }
+
+    TraceMsg("Info: %s Exit wErr:0x%04X", __FUNCTION__, wErr);
+    return wErr;
+}
+#endif
+

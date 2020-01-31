@@ -55,7 +55,7 @@ public:
 
     virtual void ReqUserInputAccountType(OUT BYTE* pbyAccountType);
 
-    virtual BOOL ReqUserInteracReceiptWarning(void);
+    virtual WORD ReqUserInteracReceiptWarning(void);
     
     virtual void LanguageProcessing(void);
     
