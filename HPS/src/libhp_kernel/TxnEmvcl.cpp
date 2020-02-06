@@ -609,6 +609,7 @@ WORD CTxnEmvcl::RetrieveCardData(void)
     WORD wLength = 0;
     BYTE *pbyData = NULL;
 
+    TraceMsg("bSID:0x%x", m_cRCData.bSID);
     switch (m_cRCData.bSID)
     {
     //MSD
@@ -1266,4 +1267,65 @@ void CTxnEmvcl::GetOfflineTxnResult(void)
     TraceMsg("TxnResult byTxnResult:%d, ulRet:%ld", byTxnResult, ulRet);
 
     TraceMsg("GetOfflineTxnResult exit");
+}
+
+
+
+
+void CTxnEmvcl::GetCardHolderNameFromICC()
+{
+    TraceMsg("Info: %s Entry", __FUNCTION__);
+
+    WORD wError = 0xFFFF;
+    BYTE byDataBuf[1024] = {0};
+    WORD wDataBufLen = 0;
+    
+    memset(m_szCardHolderName, 0, sizeof(m_szCardHolderName));
+    do
+    {
+        
+        wDataBufLen = sizeof(byDataBuf);
+        memset(byDataBuf, 0, wDataBufLen);
+        wError = ReadSpecialTags(0x5F20, byDataBuf, &wDataBufLen);
+        if (wError == 0)
+        {
+            //TraceBytes(byDataBuf, wDataBufLen, "CardHoldername:");
+            break;
+        }
+        TraceMsg("Get 0x5F20 fail! wError is:%4X\n",wError);
+        
+        wDataBufLen = sizeof(byDataBuf);
+        memset(byDataBuf, 0, wDataBufLen);
+        wError = ReadSpecialTags(0x9F0B, byDataBuf, &wDataBufLen);
+        if (wError == 0)
+        {
+            //TraceBytes(byDataBuf, wDataBufLen, "CardHoldername:");
+            break;
+        }
+    }while(0);
+    
+
+    // BOOL bFlag = TRUE;
+    // while(wDataBufLen > 0 && wError == 0)
+    // {
+    //     if ((byDataBuf[wDataBufLen - 1] >= '0' || byDataBuf[wDataBufLen - 1] <= '9') && bFlag == TRUE)
+    //     {
+    //         --wDataBufLen;
+    //     }
+
+    //     if (byDataBuf[wDataBufLen - 1] == ' ')
+    //     {
+    //         bFlag = FALSE;
+    //         --wDataBufLen;
+    //     }
+    //     else if(bFlag == FALSE)
+    //     {
+    //         break;
+    //     }
+    // }
+
+    byDataBuf[wDataBufLen + 1] = '\0';
+    memcpy(m_szCardHolderName, byDataBuf, wDataBufLen);
+    TraceMsg("CardHolder length:%d, name:%s", wDataBufLen, byDataBuf);
+    TraceMsg("Info: %s Exit", __FUNCTION__);
 }

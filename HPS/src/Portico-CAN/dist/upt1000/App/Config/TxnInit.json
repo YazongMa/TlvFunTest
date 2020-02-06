@@ -24,6 +24,7 @@
 	"cfgUniqueDeviceId": "2468",
 	"cfgTxnDescriptor": "123456789",
     "cfgTxnUserActBitmap": "0x80",
+    "cfgOnlineFlag":"TRUE",
     "cfgMerchantID" : "666620180042",
     "cfgTerminalID" : "20180142",
     "cfgProcessingCurrency" : "CAD $",

@@ -61,6 +61,8 @@ protected:
     
     void            GetOfflineTxnResult(void);
 
+    virtual void    GetCardHolderNameFromICC(void);
+
 private:
     static void     OnShowMsg(unsigned char bKernel, EMVCL_USER_INTERFACE_REQ_DATA* pstUserInterfaceRequestData);
 
